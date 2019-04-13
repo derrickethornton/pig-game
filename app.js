@@ -15,8 +15,8 @@ init();
 document.querySelector('.btn-roll').addEventListener('click', function() {
 	if (gamePlaying) {
 		// 1. Random Number
-		var dice = Math.floor(Math.random()*6+1);
-	
+		var dice = getRandom(6);
+
 		// 2. Display the result
 		var diceDOM = document.querySelector('.dice');
 		diceDOM.style.display='block';
@@ -67,6 +67,13 @@ document.querySelector('.btn-hold').addEventListener('click', function() {
 	}
 });
 
+document.querySelector('.btn-new').addEventListener('click', init);
+
+//Used to get random number between 1 and a, inclusive.
+function getRandom(a) {
+	return Math.floor(Math.random()*a+1)
+}
+
 function nextPlayer() {
 	//next player
 		activePlayer === 0 ? activePlayer=1: activePlayer=0;
@@ -83,8 +90,6 @@ function nextPlayer() {
 		
 		document.querySelector('.dice').style.display='none';
 }
-
-document.querySelector('.btn-new').addEventListener('click', init);
 
 function init() {
 	scores = [0, 0];
