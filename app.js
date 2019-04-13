@@ -111,3 +111,5 @@ function init() {
 
 	document.querySelector('.player-0-panel').classList.add('active');
 }
+
+//Going to reduce the lines of code, April 14, 2019
